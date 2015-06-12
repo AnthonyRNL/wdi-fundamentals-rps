@@ -79,5 +79,19 @@ function playToFive() {
     }
     return [playerWins, computerWins];
 }
-
-playToFive();
+function playTo(x) {
+    console.log("Let's play Rock, Paper, Scissors");
+    var playerWins = 0;
+    var computerWins = 0;
+    while ((playerWins < x) && (computerWins < x)) {
+        var winner = getWinner(getPlayerMove(), getComputerMove());
+        if (winner == "computer") {
+            computerWins += 1;
+        } else if (winner == "player") {
+            playerWins += 1;
+        }
+        var results = "Player: " + playerWins + "," + "Computer: " + computerWins;
+        console.log(results);
+    }
+    return [playerWins, computerWins];
+}
